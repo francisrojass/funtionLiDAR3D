@@ -1,5 +1,11 @@
 void recostruccion(const pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, const pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud_f, std::vector<pcl::PointXYZI> punto)
 {
+    /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+    
     // Crear el objeto KdTreeFLANN una sola vez fuera del bucle
     pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
     kdtree.setInputCloud(cloud_f);
