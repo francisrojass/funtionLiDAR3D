@@ -7,6 +7,12 @@ struct Punto
 float scoring(const pcl::PointXYZI cone_pos, const pcl::PointIndices cluster, pcl::PointCloud<pcl::PointXYZI>::Ptr cloud, float r, float h, float t)
 {
     /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez and Álvaro Landero
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+    
+    /*
     r = cone_radius
     t = noise of lidar
     h = cone height
