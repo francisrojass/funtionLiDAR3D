@@ -16,6 +16,12 @@ PolarPoint cartesianToPolar(const pcl::PointXYZI &point)
 // Función para encontrar los puntos medios de los conos en un cluster
 std::vector<pcl::PointXYZI> findConesMidpoint(const pcl::PointCloud<pcl::PointXYZI>::Ptr &cloud, const std::vector<pcl::PointIndices> &cluster_indices)
 {
+    /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+    
     std::vector<pcl::PointXYZI> puntos_medios; // Vector para almacenar los puntos medios
 
     for (const auto &indices : cluster_indices)
