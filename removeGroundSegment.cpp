@@ -3,6 +3,13 @@ void processLidarData(const pcl::PointCloud<pcl::PointXYZI>::Ptr &cloud,
                       const pcl::PointCloud<pcl::PointXYZI>::Ptr &ground_cloud,
                       const pcl::PointCloud<pcl::PointXYZI>::Ptr &remaining_cloud, int n_segments)
 {
+
+    /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+  
     // Ajustar la longitud de los datos
     cloud->points.resize(cloud->points.size() - (cloud->points.size() % n_segments));
 
