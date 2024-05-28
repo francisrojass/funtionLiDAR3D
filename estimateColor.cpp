@@ -30,6 +30,12 @@ string fitQuadratic(const map<float, double> &data)
 
 std::map<float, double> calcularIntensidadPromedioPorAnillo(const pcl::PointIndices cluster, pcl::PointCloud<velodyne_pcl::PointXYZIRT>::Ptr &velodyne_cloud, string &color)
 {
+    /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+    
     std::map<float, double> intensidadTotalPorAnillo;
     std::map<float, std::vector<float>> puntosPorAnillo;
 
