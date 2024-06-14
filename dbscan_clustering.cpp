@@ -7,6 +7,12 @@
 
 void dbscan(const pcl::PointCloud<pcl::PointXYZI>::Ptr &cloud, float eps, int minPts, std::vector<pcl::PointIndices> &cluster_indices)
 {
+    /*
+        * Copyright (c) 2024 Francisco José Rojas Ramirez
+        * Trabajo realizado en la Escuela Técnica Superior de Ingeniería Informática,
+        * Universidad de Sevilla
+    */
+    
     std::vector<int> point_cluster_indices(cloud->points.size(), -1); // Para rastrear a qué clúster pertenece cada punto
 
     pcl::search::KdTree<pcl::PointXYZI>::Ptr tree(new pcl::search::KdTree<pcl::PointXYZI>());
