@@ -32,3 +32,32 @@ void recostruccion(const pcl::PointCloud<pcl::PointXYZI>::Ptr& cloud, const pcl:
         }
     }
 }
+
+//En vez de recostruir la nube, recostruye los cluster para despues usarlos en el mapping
+void recostruccion1(
+    const pcl::PointCloud<pcl::PointXYZI>::Ptr &cloud_f, 
+    const std::vector<pcl::PointXYZI> &puntos,
+    std::vector<pcl::PointIndices>& cluster_indices) 
+{
+    pcl::KdTreeFLANN<pcl::PointXYZI> kdtree;
+    kdtree.setInputCloud(cloud_f);
+    float search_radius = 0.15;
+
+    for (size_t idx = 0; idx < puntos.size(); ++idx) {
+        std::vector<int> point_indices;
+        std::vector<float> point_distances;
+
+        if (kdtree.radiusSearch(puntos[idx], search_radius, point_indices, point_distances) > 0) {
+            for (size_t i = 0; i < point_indices.size(); ++i) {
+                int point_index = point_indices[i];
+
+                // Aquí seleccionamos el cluster al que queremos añadir el punto
+                // (Puedes cambiar esta lógica para seleccionar el cluster correcto)
+                int cluster_to_modify = idx; // Ejemplo: siempre añadir al primer cluster
+
+                // Añadir el índice del punto al cluster seleccionado
+                cluster_indices[cluster_to_modify].indices.push_back(point_index);
+            }
+        }
+    }
+}
