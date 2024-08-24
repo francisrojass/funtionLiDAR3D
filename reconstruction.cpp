@@ -51,11 +51,8 @@ void recostruccion1(
             for (size_t i = 0; i < point_indices.size(); ++i) {
                 int point_index = point_indices[i];
 
-                // Aquí seleccionamos el cluster al que queremos añadir el punto
-                // (Puedes cambiar esta lógica para seleccionar el cluster correcto)
-                int cluster_to_modify = idx; // Ejemplo: siempre añadir al primer cluster
-
-                // Añadir el índice del punto al cluster seleccionado
+                int cluster_to_modify = idx; 
+   
                 cluster_indices[cluster_to_modify].indices.push_back(point_index);
             }
         }
